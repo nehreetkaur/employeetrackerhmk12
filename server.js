@@ -3,6 +3,7 @@ const inquirer = require('inquirer');
 
 let depArray=[];
 let roleArray=[];
+let deleteArray=[];
 
 
 var connection = mysql.createConnection({
