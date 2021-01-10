@@ -250,7 +250,7 @@ const addDepartment = () => {
 // delete a department
 function deleteEmployee(); {
     // console.log(" i am in delete Employee");
-    ViewEmployees();
+    ViewAllEmployees();
     connection.query("SELECT * FROM employee", function (err, res) {
       if (err) throw err;
       for (var i = 0; i < res.length; i++) {
@@ -266,7 +266,7 @@ function deleteEmployee(); {
             , function (err, res) {
               if (err) throw err;
               console.log("\n");
-              ViewEmployees();
+              ViewAllEmployees();
             });
         })
     })
