@@ -190,8 +190,7 @@ const addDepartment = () => {
     connection.query(`INSERT INTO department(name)  VALUES('${answer.department}')`, (err, res) => {
       if (err) throw err;
       console.log("ONE NEW DEPARTMENT ADDED:" + answer.department);
-
-
+       
       ViewAllDepartments();
     })
   })
@@ -220,7 +219,7 @@ function updateEmployee() {
   let roleResults = [], employeeResults = []; // Initialize as empty arrays for now.
 
 
- 
+
 
   // Query Employees
   connection.query(`SELECT * FROM employee`, function (err, res) {
@@ -248,12 +247,12 @@ function updateEmployee() {
         }
       ]).then(function (answer) {
 
-        
+
         let { employee_id } = employeeResults.find(employee => `${employee.first_name} ${employee.last_name}` === answer.employee_full_name);
 
         let { role_id } = roleResults.find(role => role.title === answer.role_title);
 
-        
+
         connection.query(`UPDATE employee SET role_id = ${role_id} WHERE employee_id=${employee_id}`, function (err, res) {
           if (err) throw err;
           console.log("Update Successful\n\n\n");
@@ -266,8 +265,8 @@ function updateEmployee() {
 
 }
 
-// only to view employess for delete function
-function viewEmp(){
+// specific function only to view employess for delete function
+function viewEmp() {
   console.log("hello");
   connection.query(`SELECT * FROM employee 
                     INNER JOIN role ON role.role_id=employee.role_id
@@ -277,7 +276,7 @@ function viewEmp(){
     console.log("\n");
     console.table(res);
 
-})
+  })
 }
 
 
@@ -325,7 +324,7 @@ function addRole() {
       // Once we find that department name, then we use its department_id
       for (let i = 0; i < res.length; i++) {
         if (res[i].name === answer.department_name) {
-          department_id = res[i].department_id;  
+          department_id = res[i].department_id;
           break;
         }
       }
@@ -379,7 +378,7 @@ function addEmployee() {
 
       for (let i = 0; i < res.length; i++) {
         if (res[i].title === answer.role) {
-          role_id = res[i].role_id;  
+          role_id = res[i].role_id;
           break;
         }
       }
@@ -401,23 +400,23 @@ function addEmployee() {
 // delete a department
 function deleteEmployee() {
   console.log(" i am in delete Employee");
- viewEmp();
- connection.query("SELECT * FROM employee", function (err, res) {
-   if (err) throw err;
-   for (var i = 0; i < res.length; i++) {
-     deleteArray.push(res[i].employee_id);
-   }
-   inquirer.prompt({
-     
-     name: "deleteEmployee",
-     type: "input",
-     message: "Enter the id of the employee you want to delete?",
-   }).then(function (answer) {
-     connection.query(`DELETE FROM employee WHERE employee_id="${answer.deleteEmployee}"`, function (err, res) {
-       if (err) throw err;
-       console.log("\n");
-       ViewAllEmployees();
-     });
-   })
- })
+  viewEmp();
+  connection.query("SELECT * FROM employee", function (err, res) {
+    if (err) throw err;
+    for (var i = 0; i < res.length; i++) {
+      deleteArray.push(res[i].employee_id);
+    }
+    inquirer.prompt({
+
+      name: "deleteEmployee",
+      type: "input",
+      message: "Enter the id of the employee you want to delete?",
+    }).then(function (answer) {
+      connection.query(`DELETE FROM employee WHERE employee_id="${answer.deleteEmployee}"`, function (err, res) {
+        if (err) throw err;
+        console.log("\n");
+        ViewAllEmployees();
+      });
+    })
+  })
 }

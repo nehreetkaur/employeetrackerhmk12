@@ -14,9 +14,11 @@ in **SQL WORKBENCH**.
 
 [RESOURCES-REFERRED](#RESOURCES-REFERRED)
 
-[GIF-DEMO](#GIF-DEMO)
+[VIDEO-DEMO](#VIDEO-DEMO)
 
 [GIT-HUB-REPOSITORY](#GIT-HUB-REPOSITORY)
+
+[SCREEN-SHOT](#SCREEN-SHOT)
 
 
 # DETAILED-DESCRIPTION
@@ -26,7 +28,8 @@ will be presented with some choices  like **VIEWALLEMPLOYEE**,**ADDROLE** etc.
 After, selecting one of the choices, user will be presented with the **EMPLOYEE TABLE** as per user's selection. One has to install **npm i , sql ** to get all 
 the **DEPENDENCIES**. ALSO , need to create **EMPLOYEE-DB** in **SQL WORKBENCH**
 HAVE to create employee,role,department tables in the **EMPLOYEE-DB**.
-**CONNECTION** to the **DATABASE** in sql workbench is very important in **CODE** to move further in the working of this application. **WRITING QUERIES** to get recquired data from **EMPLOYEE-DB** in **CODE**.
+**CONNECTION** to the **DATABASE** in sql workbench is very important in **CODE** to move further in the working of this application. **WRITING QUERIES** to get recquired data from **EMPLOYEE-DB** in **CODE**. And it's very important to 
+**END** the connection after testing the application on the terminal.
 
 # INSTALLATION
 
@@ -56,3 +59,9 @@ HAVE to create employee,role,department tables in the **EMPLOYEE-DB**.
 [GIT_HUB-REPOSITORY](https://github.com/nehreetkaur/employeetrackerhmk12)
 
 
+# SCREEN-SHOT
+![SCREENSHOT](images/terminal1..png)
+
+![SCREENSHOT](images/terminal2.png)
+
+![SCREENSHOT](images/terminal3.png)
