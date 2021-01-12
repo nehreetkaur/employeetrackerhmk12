@@ -190,7 +190,6 @@ const addDepartment = () => {
     connection.query(`INSERT INTO department(name)  VALUES('${answer.department}')`, (err, res) => {
       if (err) throw err;
       console.log("ONE NEW DEPARTMENT ADDED:" + answer.department);
-       
       ViewAllDepartments();
     })
   })
